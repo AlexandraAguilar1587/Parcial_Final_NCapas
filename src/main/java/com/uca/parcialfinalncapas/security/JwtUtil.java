@@ -18,13 +18,11 @@ public class JwtUtil {
     @Value("${jwt.expiration-ms}")
     private long expirationMs;
 
-    // Construye la clave HMAC a partir de los bytes UTF-8 de tu secreto
     private SecretKey getSigningKey() {
         byte[] keyBytes = secret.getBytes(StandardCharsets.UTF_8);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    // Genera el token usando la clave anterior
     public String generateToken(String username, String role) {
         SecretKey key = getSigningKey();
         return Jwts.builder()
@@ -36,7 +34,6 @@ public class JwtUtil {
                 .compact();
     }
 
-    // Valida y parsea el token
     public Claims validateAndGetClaims(String token) {
         SecretKey key = getSigningKey();
         return Jwts.parserBuilder()

@@ -32,7 +32,6 @@ public class TicketController {
     @GetMapping
     @PreAuthorize("hasAnyRole('USER','TECH')")
     public ResponseEntity<GeneralResponse> getAllTickets() {
-        // 1) obtenemos el listado completo
         List<TicketResponseList> all = ticketService.getAllTickets();
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -41,7 +40,6 @@ public class TicketController {
 
         List<TicketResponseList> filtered = all;
         if (!isTech) {
-            // 2) para USER, filtramos por su propio ID
             String correo = auth.getName();
             Long userId = userRepository.findByCorreo(correo)
                     .orElseThrow(() -> new BadTicketRequestException("Usuario no encontrado"))

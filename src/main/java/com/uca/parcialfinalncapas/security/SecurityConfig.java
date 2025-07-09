@@ -1,4 +1,3 @@
-// src/main/java/com/uca/parcialfinalncapas/security/SecurityConfig.java
 package com.uca.parcialfinalncapas.security;
 
 import org.springframework.context.annotation.Bean;
@@ -21,7 +20,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
-@EnableMethodSecurity   // <— activa @PreAuthorize
+@EnableMethodSecurity
 
 public class SecurityConfig {
 
@@ -68,7 +67,6 @@ public class SecurityConfig {
 
     @Bean
     public AuthenticationManager authManager(UserDetailsService uds, PasswordEncoder encoder) {
-        // Construye manualmente un ProviderManager evitando proxies recursivos
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(uds);
         provider.setPasswordEncoder(encoder);

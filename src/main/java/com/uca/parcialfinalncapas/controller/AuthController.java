@@ -35,7 +35,6 @@ public class AuthController {
             return ResponseEntity.ok(new AuthResponse(token));
 
         } catch (BadCredentialsException ex) {
-            // Credenciales incorrectas
             ErrorResponse err = ErrorResponse.builder()
                     .message("Credenciales inválidas")
                     .status(HttpStatus.UNAUTHORIZED.value())

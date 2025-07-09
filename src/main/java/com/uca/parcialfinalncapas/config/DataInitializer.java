@@ -13,7 +13,6 @@ public class DataInitializer {
     @Bean
     public CommandLineRunner init(UserRepository repo, PasswordEncoder encoder) {
         return args -> {
-            // Usuario normal (USER)
             if (repo.findByCorreo("user@ejemplo.com").isEmpty()) {
                 repo.save(User.builder()
                         .nombre("Usuario Cliente")
@@ -22,7 +21,6 @@ public class DataInitializer {
                         .nombreRol("USER")
                         .build());
             }
-            // Técnico (TECH)
             if (repo.findByCorreo("tech@ejemplo.com").isEmpty()) {
                 repo.save(User.builder()
                         .nombre("Técnico Soporte")
