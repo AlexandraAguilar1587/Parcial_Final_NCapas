@@ -42,8 +42,8 @@ _Si van a crear mas endpoints como el login o registrarse recuerden actualizar p
 
 #### Parte 3: Proteger endpoints con Spring Security
 - [x] Permitir solo el acceso al login sin token.
-- [ ] Proteger todos los demás endpoints.
-- [ ] Manejar errores de autorización adecuadamente.
+- [x] Proteger todos los demás endpoints.
+- [x] Manejar errores de autorización adecuadamente.
 
 #### Parte 4: Aplicar roles a los endpoints
 
@@ -52,16 +52,16 @@ _Si van a crear mas endpoints como el login o registrarse recuerden actualizar p
 | USER  | Crear tickets, ver solo sus tickets              |
 | TECH  | Ver todos los tickets, actualizar estado         |
 
-- [ ] Usar `@PreAuthorize` o reglas en el `SecurityFilterChain`.
-- [ ] Validar que un USER solo vea sus tickets.
-- [ ] Validar que solo un TECH pueda modificar tickets.
+- [x] Usar `@PreAuthorize` o reglas en el `SecurityFilterChain`.
+- [x] Validar que un USER solo vea sus tickets.
+- [x] Validar que solo un TECH pueda modificar tickets.
 
 #### Parte 5: Agregar Docker
-- [ ] `Dockerfile` funcional para la aplicación.
-- [ ] `docker-compose.yml` que levante la app y la base de datos.
+- [x] `Dockerfile` funcional para la aplicación.
+- [x] `docker-compose.yml` que levante la app y la base de datos.
 - [ ] Documentar cómo levantar el entorno (`docker compose up`).
 
 #### Parte 6: Evidencia de pruebas
-- [ ] Probar todos los flujos con Postman/Insomnia/Bruno.
-- [ ] Mostrar que los roles se comportan correctamente.
-- [ ] Incluir usuarios de prueba (`user`, `tech`) y contraseñas.
+- [x] Probar todos los flujos con Postman/Insomnia/Bruno.
+- [x] Mostrar que los roles se comportan correctamente.
+- [x] Incluir usuarios de prueba (`user`, `tech`) y contraseñas.
